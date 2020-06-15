@@ -5,8 +5,10 @@ from pathlib import Path
 import geopandas as gpd
 from shapely.geometry import Polygon
 import pandas as pd
+import json
 
 file_shapefile = Path("dependency/usa-states-2018/usa-states-2018.shp")
+file_save = Path("dependency/usa-states-2018/data.json")
 
 df_states = gpd.read_file(file_shapefile)
 names = [state for state in df_states.NAME]
@@ -17,7 +19,11 @@ xs, ys = [], []
 xs = [list(polygon.boundary.coords.xy[0]) for polygon in polygons]
 ys = [list(polygon.boundary.coords.xy[1]) for polygon in polygons]
 
-source = ColumnDataSource(dict(xs = xs, ys = ys, states = states))
+data = dict(xs = xs, ys = ys, states = states)
+# with open(file_save, 'w') as f:
+#     json.dump(data, f)
+
+source = ColumnDataSource(data)
 p = figure(title="geo-spacial visualization",
            plot_width=750,
            plot_height=506,
