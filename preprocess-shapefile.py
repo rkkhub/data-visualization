@@ -19,7 +19,7 @@ df_states.drop(["STATEFP", "STATENS", "AFFGEOID","GEOID",
 df_states.to_crs(epsg=2163, inplace=True)                                           # convert projection to a desired espg
 
 df_states.to_file(driver = 'ESRI Shapefile',                                        # save processed shapefie
-                  filenam e= file_formated)
+                  filename = file_formated)
 
 
 """
