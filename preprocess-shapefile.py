@@ -3,9 +3,9 @@ from shapely.geometry import Polygon
 import geopandas as gpd
 import json
 
-file_source = Path("dependency/cb_2018_us_state_500k/cb_2018_us_state_500k.shp")
-file_formated = Path("dependency/usa-states-2018/usa-states-2018.shp")
-file_json = Path("dependency/usa-states-2018.json")
+file_source = Path("shapefile/cb_2018_us_state_500k/cb_2018_us_state_500k.shp")
+file_formated = Path("shapefile/usa-states-2018/usa-states-2018.shp")
+file_json = Path("shapefile/usa-states-2018.json")
 
 """
 Source shapefile contain excess data, and requires projection conversion

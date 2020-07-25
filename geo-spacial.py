@@ -7,7 +7,7 @@ import pandas as pd
 import json
 
 
-file_data = Path("dependency/usa-states-2018.json")
+file_data = Path("shapefile/usa-states-2018.json")
 
 with open(file_data,"r") as f:
   data = json.load(f)
