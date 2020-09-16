@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    db:
+        build: .
+        volumes:
+            - ./path_tobe_shared: /target/path
+        ports:
+            - 5000:80
+    website:
+        build: 
